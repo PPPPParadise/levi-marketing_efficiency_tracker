@@ -1,0 +1,22 @@
+<!--Hide Navbar on Welcome Screens for every module-->
+<div class="navbar-content-wrapper" *ngIf="current_route">
+
+  <!--Content: Starts-->
+
+  <section id="content-navbar">
+    <div class="navbar-wrapper sidebar" (click)="toggleSideNavbar()" [@slideInOut]="menuState" [ngClass]="{'active': menuState == 'in'}">
+      <nav class="content-nav">
+        <ul class="c-navbar-list">
+          <option [value]="first_name">{{first_name}}</option>
+          <option [value]="last_name">{{last_name}}</option>
+          <li class="c-navbar-item">
+            <a routerLink="/../auth/logout" class="c-navbar-link">Logout</a>
+            <!-- <a routerLink="/../auth/login" class="c-navbar-link">Logout</a> -->
+          </li>
+        </ul>
+      </nav>
+    </div>
+
+  </section>
+
+</div>

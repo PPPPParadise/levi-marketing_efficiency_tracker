@@ -1,0 +1,152 @@
+
+<div class="container" *ngIf="loaderVisiblity == 'hidden'">
+  <!-- <div> -->
+    <div style="margin-top: 5px; float:right; margin-right:10%;">
+      <span style='color:red'>*</span>
+        <label for="email">Month:</label>
+          <input  [(ngModel)]="selected_date_approved_reject" autocomplete="off"  name="selected_date_approved_reject" bsDatepicker [bsConfig]="{dateInputFormat: 'YYYYMM'}" (onShown)="onOpenCalendar($event)">
+          <!-- <mat-form-field>
+              <input matInput [matDatepicker]="dp" placeholder="Month and Year" [formControl]="date">
+              <mat-datepicker-toggle matSuffix [for]="dp"></mat-datepicker-toggle>
+              <mat-datepicker #dp
+                              startView="multi-year"
+                              (yearSelected)="chosenYearHandler($event)"
+                              (monthSelected)="chosenMonthHandler($event, dp)"
+                              panelClass="example-month-picker">
+              </mat-datepicker>
+          </mat-form-field> -->
+            
+    </div>
+    <div style="margin-top: 5px; float:right; margin-right:10%;">
+      <span style='color:red'>*</span>
+        <label for="email">Country:</label>
+        <span><b>{{selected_country_approved_reject}}</b></span>
+          <!-- <input [(ngModel)] = "selected_country" > -->
+          <!-- <select class="form-control" id="selected_country" [(ngModel)]="selected_country"> -->
+              <!-- <option *ngFor='let item of CountryList' [value]="item">{{item.name}}</option> -->
+          <!-- </select> -->
+    </div>
+    <table>
+      <thead>
+        <th>Template Type</th>
+        <th>Last Uploaded On</th>
+        <th>Approve</th>
+        <th>Reject</th>
+        <th>Remark</th>
+        <!-- <th>Last Uploaded On</th> -->
+        <th>Last Action</th>
+        <th>Last Actioned On</th>
+      </thead>
+      <tbody id="reset">
+        <tr>
+          <td>ATL</td>
+          <td><span>{{last_uploads.ATL.date | date:'medium'}}</span></td>
+          <td><input id ="atl_approved" type="radio" [(ngModel)]="atl_status" name="atl_action" value="1" > <br></td>
+          <td><input id ="atl_reject" type="radio" [(ngModel)]="atl_status" name="atl_action" value="0" > <br></td>
+          <td><input id='atl_remark' type="text" [(ngModel)]="atl_remark" name="remark"></td>
+          <!-- <td><span>{{last_uploads.ATL.date | date:'medium'}}</span></td> -->
+          <td><span>{{last_updates.ATL.status | titlecase}}</span></td>
+          <td><span>{{last_updates.ATL.date | date :'medium'}}</span></td>
+        </tr>
+        <tr>
+          <td>DIGITAL</td>
+          <td><span>{{last_uploads.Digital.date | date:'medium'}}</span></td>
+          <td><input id ="digital_approved" type="radio" [(ngModel)]="digital_status" name="digital_action" value="1" > <br></td>
+          <td><input id ="digital_reject" type="radio" [(ngModel)]="digital_status" name="digital_action" value="0" > <br></td>
+          <td><input id='digital_remark' type="text" [(ngModel)]="digital_remark" name="remark"></td>
+          <!-- <td><span></span></td>
+          <td><span></span></td> -->
+          <!-- <td><span>{{last_uploads.Digital.date | date:'medium'}}</span></td> -->
+          <td><span>{{last_updates.Digital.status | titlecase}}</span></td>
+          <td><span>{{last_updates.Digital.date | date :'medium'}}</span></td>
+        </tr>
+        <tr>
+          <td>PR</td>
+          <td><span>{{last_uploads.PR.date | date:'medium'}}</span></td>
+          <td><input id ="pr_approved" type="radio" [(ngModel)]="pr_status" name="pr_action" value="1" > <br></td>
+          <td><input id ="pr_reject" type="radio" [(ngModel)]="pr_status" name="pr_action" value="0" > <br></td>
+          <td><input id='pr_remark' type="text" [(ngModel)]="pr_remark" name="remark"></td>
+          <td><span>{{last_updates.PR.status | titlecase}}</span></td>
+          <td><span>{{last_updates.PR.date | date :'medium'}}</span></td>
+        </tr>
+        <tr>
+          <td>CRM</td>
+          <td><span>{{last_uploads.CRM.date | date:'medium'}}</span></td>
+          <td><input id ="crm_approved" type="radio" [(ngModel)]="crm_status" name="crm_action" value="1" > <br></td>
+          <td><input id ="crm_reject" type="radio" [(ngModel)]="crm_status" name="crm_action" value="0" > <br></td>
+          <td><input id='crm_remark' type="text" [(ngModel)]="crm_remark" name="remark"></td>
+          <td><span>{{last_updates.CRM.status | titlecase}}</span></td>
+          <td><span>{{last_updates.CRM.date | date :'medium'}}</span></td>
+        </tr>
+      </tbody>
+    </table>
+    <div>
+      <input style="float: right; margin-top: 10px; margin-right:50%;" type="submit" name="Submit" (click)="approved()">
+      <button style="float: right; margin-top: 10px; margin-right:10px;" type="reset" (click) = "clearForm()">Reset</button>
+    </div>
+    <div>
+      <h2 class="list_err">
+        {{success_msg}}
+      </h2>
+    </div>
+    <div>
+        <ol *ngFor='let item of ignore_actions;'>
+          <div style="color:red;"><b><p>{{item.type}}: {{item.message}}</p></b></div>
+        </ol>
+    </div>
+
+
+
+    <!-- <div> -->
+    <!-- <script type='text/javascript' src='https://levis-met.cartesianconsulting.com/javascripts/api/viz_v1.js'></script> 
+    <div class='tableauPlaceholder' style='width: 1200px; height: 400px;'>
+      <object class='tableauViz' width='1120' height='600' style='display:block;'>
+        <param name='host_url' value='https%3A%2F%2Flevis-met.cartesianconsulting.com%2F' /> <param name='embed_code_version' value='3' />
+        <param name='site_root' value='' /><param name='name' value='CampaignDashboardLive&#47;CAMPAIGNPERFORMANCELevis' />
+        <param name='tabs' value='no' /><param name='toolbar' value='yes' /><param name='showAppBanner' value='false' />
+        <param name='filter' value='iframeSizedToWindow=true'>
+      </object>
+    </div> -->
+  <!-- </div> -->
+  <!-- old tableau link -->
+  <!-- <script type='text/javascript' src='https://levis-met.cartesianconsulting.com/javascripts/api/viz_v1.js'></script>
+  <div class='tableauPlaceholder' style='width: 1200px; height: 400px;'>
+    <object class='tableauViz' width='1120' height='600' style='display:none;'>
+    <param name='host_url' value='https%3A%2F%2Flevis-met.cartesianconsulting.com%2F' /> <param name='embed_code_version' value='3' />
+    <param name='site_root' value='' /><param name='name' value='CampaignDashboardLive&#47;CAMPAIGNPERFORMANCELevis' />
+    <param name='tabs' value='no' /><param name='toolbar' value='yes' /><param name='showAppBanner' value='false' />
+    <param name='filter' value='iframeSizedToWindow=true' />
+  </object>
+  </div> -->
+<!-- new teableau  link -->
+  <div class='tableauPlaceholder' style='width: 1200px; height: 400px;'>
+    <object class='tableauViz' width='1120' height='600' style='display:none;'>
+    <param name='host_url' value='https%3A%2F%2Flevis-met.cartesianconsulting.com%2F' />
+    <param name='embed_code_version' value='3' /> <param name='site_root' value='' />
+    <param name='name' value='CampaignDashboardLive&#47;CAMPAIGNPERFORMANCEBeforeApproval' />
+    <param name='tabs' value='no' />
+    <param name='toolbar' value='yes' />
+    <param name='showAppBanner' value='false' />
+    <param name='filter' value='iframeSizedToWindow=true' />
+    </object>
+  </div>
+  <!-- <div class='tableauPlaceholder' style='width: 1366px; height: 605px;'>
+    <object class='tableauViz' width='1365' height='604' style='display:block;'>
+    <param name='host_url' value='https%3A%2F%2Flevis-met.cartesianconsulting.com%2F' /> <param name='embed_code_version' value='3' />
+    <param name='site_root' value='' /><param name='name' value='CampaignDashboardLive&#47;CAMPAIGNPERFORMANCELevis' />
+    <param name='tabs' value='no' /><param name='toolbar' value='yes' /><param name='showAppBanner' value='false' />
+    <param name='filter' value='iframeSizedToWindow=true' /></object>
+  </div> -->
+
+  <!-- <script type='text/javascript' src='http://myserver/javascripts/api/viz_v1.js'></script> 
+  <div class='tableauPlaceholder' style='width:800; height:600;'> 
+  <object class='tableauViz' width='800' height='600' style='display:none;'>
+    <param name='host_url' value='http%3A%2F%2Fmyserver%2F' /> 
+    <param name='site_root' value=&#47;t&#47;Sales' /> 
+    <param name='name' value='MyCoSales&#47;SalesScoreCard&#47;' /> 
+    <param name='tabs' value='yes' /> 
+    <param name='toolbar' value='yes' /></object></div> -->
+</div>
+<!-- <div  [@visibilityChanged]="loaderVisiblity">
+  <app-loader [loadingText]="'LOADING'"></app-loader>
+</div> -->

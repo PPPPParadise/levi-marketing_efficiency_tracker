@@ -1,0 +1,39 @@
+<section class="login">
+  <div class="banner"></div>
+  <div class="container">
+    <div class="row">
+      <div class="offset-lg-2 col-lg-8 offset-md-1 col-md-10 col-sm-12" style="margin-top: 48px;z-index: 1;">
+      <!-- <div> -->
+        <div class="login-wrapper">
+          <div class="header">
+            <h3>WELCOME TO MET DATA UPLOAD SCREEN</h3>
+          </div>
+          <div class="login-creds-wrapper">
+            <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+              <div class="loginDiv">
+                <input type="text" placeholder="Enter Username" class="form-control" formControlName="username">
+                <img src="assets/images/username.png" alt="">
+                <div *ngIf="loginForm.controls['username'].hasError('required') && (loginForm.controls['username'].dirty || loginForm.controls['username'].touched)"
+                  class="error">
+                  This field is required.
+                </div>
+              </div>
+              <div class="loginDiv">
+                <input type="password" class="form-control" formControlName="password" placeholder="Enter Password" >
+                <img src="assets/images/password.png" alt="">
+                <div *ngIf="loginForm.controls['password'].hasError('required') && (loginForm.controls['password'].dirty || loginForm.controls['password'].touched)"
+                  class="error">
+                  This field is required.
+                </div>
+                <div *ngIf="error" class="error">{{error}}</div>
+              </div>
+              <div class="loginButton">
+                <button [disabled]="!loginForm.valid" id="log-in-btn" class="solid-button solid-green">LOGIN</button>                
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

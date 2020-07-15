@@ -1,0 +1,96 @@
+<div class="wrapper">
+
+  <section id="home-navbar">
+    <div class="navbar-wrapper sidebar" (click)="toggleSideNavbar()" [@slideInOut]="menuState"
+      [ngClass]="{'active': menuState == 'in'}">
+      <!--Back Icon-->
+      <button type="button" id="sidebarCollapse" class="btn btn-info navbar-menu-back-btn">
+        <i class="fa fa-arrow-left"></i>
+      </button>
+      <nav class="home-nav">
+        <ul class="c-navbar-list">
+          <li class="c-navbar-item"><a class="c-navbar-link" routerLink="/auth">Login</a></li>
+          <!-- <li class="c-navbar-item"><a class="c-navbar-link" (click)="login()">Login</a></li> -->
+        </ul>
+      </nav>
+    </div>
+  </section>
+
+  <section id="header">
+    <div class="container">
+      <div class="row">
+        <div class="header-mobile col-lg-12">
+
+          <!--Sidebar Icon-->
+          <button type="button" id="sidebarCollapse" class="btn btn-info navbar-menu-btn" (click)="toggleSideNavbar()">
+            <i class="fa fa-bars"></i>
+          </button>
+
+          <!-- <img src="assets/images/Solus_logo.png" alt="Solu Logo"> -->
+          <!-- <img src="assets/images/transworld_logo.svg" alt="Transworld"> -->
+        </div>
+      </div>
+    </div>
+  </section>
+ 
+  <!-- predict data is present then modal present START -->
+  <div class="modal fade" id="confirmModalContext">
+    <span data-toggle="modal" data-target="#confirmModalContext" #openConfirmModalContext></span>
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-body  align-right">
+          <!-- <app-login></app-login> -->
+          <!-- login START -->
+          <section class="login">
+            <div class="container">
+              <!-- <div class="row"> -->
+                <!-- <div class="offset-lg-2 col-lg-8 offset-md-1 col-md-10 col-sm-12"> -->
+                <div>
+                  <div class="login-wrapper">
+                    <div class="header">
+                      <!-- <img src="assets/images/Solus_logo.png" alt="Solus Logo"> -->
+                      <img src="assets/images/Solus-Logo-New-1.0.png" alt="Solu Logo">
+                    </div>
+          
+                    <div class="login-creds-wrapper">
+                      <!-- <input type="text" placeholder="Enter Username">
+                      <input type="password" placeholder="Enter Password">
+                      <button type="button" id="log-in-btn" class="solid-button solid-green" (click)="login()">LOGIN</button> -->
+                    
+                      <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+                        <div class="loginDiv">
+                          <input type="text" placeholder="Enter Username" class="form-control" formControlName="username">
+                          <div *ngIf="loginForm.controls['username'].hasError('required') && (loginForm.controls['username'].dirty || loginForm.controls['username'].touched)"
+                            class="error">
+                            This field is required.
+                          </div>
+                        </div>
+                        <div class="loginDiv">
+                          <input type="password" class="form-control" formControlName="password" placeholder="Enter Password" >
+                          <div *ngIf="loginForm.controls['password'].hasError('required') && (loginForm.controls['password'].dirty || loginForm.controls['password'].touched)"
+                            class="error">
+                            This field is required.
+                          </div>
+                          <div *ngIf="error" class="error">{{error}}</div>
+                        </div>
+                        <div class="loginButton">
+                          <button [disabled]="!loginForm.valid" id="log-in-btn" class="solid-button solid-green" >LOGIN</button>
+                        </div>
+                      </form>
+                    </div>
+                  </div>
+                <!-- </div> -->
+              </div>
+            </div>
+          </section>
+          
+          <!-- login END -->
+
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- predict data is present then modal present END -->
+
+
+</div>

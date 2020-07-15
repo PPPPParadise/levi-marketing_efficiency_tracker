@@ -1,0 +1,23 @@
+table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+  }
+  
+  td, th {
+    text-align: center;
+    padding: 8px;
+  }
+  
+  tr:nth-child(even) {
+    background-color: #dddddd;
+  }
+
+#remark {
+    border: 1px solid #dddddd;
+    width: 80%;
+    border-collapse: collapse;
+    padding: 10px;
+}
+
+

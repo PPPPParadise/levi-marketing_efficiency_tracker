@@ -1,0 +1,25 @@
+<section *ngIf="current_route" id="genome-navigation">
+
+
+  <!--Main Genome navigation-->
+  <div class="nav-wrapper">
+    <!-- <div class="Logo">
+      <img src="assets/images/levis-strauss-logo.jpg" alt="levisLogo">
+    </div> -->
+
+    <!--Main Modules-->
+    <div class="main-modules">
+      <div class="Logo">
+        <img src="assets/images/levis-strauss-logo.jpg" alt="levisLogo" style="margin-top: -14px;">
+      </div>
+      <button *ngIf="is_eligible_upload == 'true'" id = "upload_tab" class="genome-overview nav-tab" routerLinkActive="active" routerLink="./upload"><a>Upload</a></button>
+      <button  *ngIf="is_eligible_upload == 'false'" id = "upload_tab" class="genome-overview nav-tab" routerLinkActive="inactive" routerLink="./upload" type ="button" disabled>Upload</button>
+      <button id = "download_tab" class="genome-analysis nav-tab" routerLinkActive="active" routerLink="./download"><a>Download</a></button>
+      <button *ngIf="is_eligible_approve == 'true'" id = "approve_tab" class="genome-analysis nav-tab" routerLinkActive="active" routerLink="./approve"><a>Approve/Reject</a></button>
+      <button *ngIf="is_eligible_approve == 'false'" id = "approve_tab" class="genome-analysis nav-tab" routerLinkActive="inactive" routerLink="./approve" type ="button" disabled>Approve/Reject</button>
+      
+    </div>
+  </div> 
+
+
+</section>

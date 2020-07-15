@@ -1,0 +1,384 @@
+@import "../../../assets/css/css_variables.scss";
+
+#header {
+  text-align: center;
+}
+
+#header img {
+  transform: scale(0.5);
+}
+
+
+/* Navbar */
+
+#home-navbar .navbar-wrapper {
+  // background: $blue;
+  background: linear-gradient(90deg,#00b0f0,#59d99d);
+}
+
+.home-nav {
+  padding: 10px 0px;
+}
+
+.c-navbar-list {
+  display: flex;
+  justify-content: space-around;
+}
+
+.c-navbar-list .c-navbar-item {
+  cursor: pointer;
+}
+
+.c-navbar-list .c-navbar-item a {
+  font-size: 17px;
+  color: #fff;
+  transition: all 0.4s ease;
+  text-transform: uppercase;
+}
+
+.c-navbar-list .c-navbar-item:hover a {
+  color: #000;
+}
+
+.wrapper {
+  display: flex;
+  flex-direction: column-reverse;
+}
+
+
+/* Hide Navbar Buttons - Menu and Back Buttons*/
+
+.navbar-menu-btn,
+.navbar-menu-back-btn {
+  display: none;
+}
+
+
+/* -------------------------------------------------RESPONSIVENESS -------------------------------------------------*/
+
+
+/* Large devices (desktops, less than 1200px) */
+
+@media (max-width: 1199.98px) {}
+
+
+/* Medium devices (tablets, less than 992px) */
+
+@media (max-width: 991.98px) {
+  .c-navbar-list {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+  }
+}
+
+
+/* Small devices (landscape phones, less than 768px) */
+
+@media (max-width: 767.98px) {
+  .wrapper {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .header-mobile {
+    position: relative;
+    padding: 10px 0px;
+  }
+
+  .navbar-menu-btn,
+  .navbar-menu-back-btn {
+    display: block;
+  }
+
+  .header-mobile button {
+    position: absolute;
+    left: 10px;
+    top: 15px;
+  }
+
+  .navbar-menu-btn {
+    background: #00b0f0 !important;
+    border: 1px solid #00b0f0 !important;
+  }
+
+  .navbar-menu-btn:focus {
+    outline: none !important;
+  }
+
+  .navbar-menu-btn:hover {
+    background: #0383b1 !important;
+    border-color: #0383b1 !important;
+  }
+
+  #header img {
+    transform: unset;
+    width: 10em;
+  }
+
+  /* sidebar */
+  .sidebar {
+    width: 60vw;
+    position: fixed;
+    height: 100vh;
+    overflow: auto;
+    z-index: 9;
+    transition: all 0.4s ease;
+  }
+
+  #home-navbar .navbar-wrapper.active {
+    box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.2);
+  }
+
+  .c-navbar-list {
+    display: flex;
+    justify-content: unset;
+    flex-wrap: unset;
+    flex-direction: column;
+  }
+
+  #home-navbar .navbar-wrapper {
+    background: rgb(0, 176, 240);
+  }
+
+  .navbar-menu-back-btn {
+    position: absolute;
+    right: 5px;
+    top: 5px;
+    background: #fff;
+    border: 1px solid #fff;
+
+    &:hover {
+      background: #fff !important;
+      border: 1px solid #fff !important;
+    }
+
+    &:focus {
+      outline: none;
+    }
+  }
+
+  .navbar-menu-back-btn i {
+    color: $blue;
+  }
+
+  .home-nav {
+    padding: 60px 0px 0px 0px;
+  }
+
+  .c-navbar-list {
+    .c-navbar-item {
+      padding: 10px;
+    }
+
+    .c-navbar-item.active {
+      background: #0085b5;
+    }
+
+    .c-navbar-item:active,
+    .c-navbar-item:focus {
+      background: #01678c;
+
+      a {
+        color: #fff
+      }
+    }
+
+    .c-navbar-item:hover {
+      a {
+        color: #fff;
+      }
+    }
+  }
+}
+
+
+/* Extra small devices (portrait phones, less than 576px) */
+
+@media (max-width: 575.98px) {}
+
+
+// LOGIN START
+$default-font: "assets/fonts/Calibri.ttf";
+// $default-font: "assets/fonts/HelveticaNeue-Thin.otf";
+
+$green: rgb(103, 253, 214);
+$blue: rgb(0, 176, 240);
+$light-grey: #a5a5a5;
+.login-wrapper .header img {
+    transform: scale(0.6);
+}
+
+.login-wrapper {
+    // margin-top: 3.125em;
+    margin-top: 1.125em;
+    padding: 0.625em 0 2.5em 0;
+    border: 1px solid $light-grey;
+    border-radius: 5px;
+}
+
+.header {
+    text-align: center;
+    margin-bottom: 1.875em;
+}
+
+.login-creds-wrapper {
+    display: flex;
+    flex-direction: column;
+    // padding: 0px 6.250em;
+}
+
+.login-creds-wrapper input {
+    border: 1px solid #DEE1E6;
+    border-radius: 30.89px;
+    background-color: #FFFFFF;
+    padding: 15px 25px;
+    //neha
+    height: auto;
+}
+
+// .login-creds-wrapper input {
+//     margin: 0px auto 2px auto;
+//     width: 80%;
+// }
+
+.login-creds-wrapper .loginDiv {
+    margin: 0px auto 20px auto;
+    width: 80%;
+}
+
+.login-creds-wrapper input:focus {
+    outline: none;
+    border: 1px solid #3598DC;
+    //neha
+    box-shadow: none;
+}
+
+//neha
+.error{
+    text-align: center;
+    color: #e74c3c;
+    font-size: 16px;
+    animation: 2s ease-out 0s 2 slide;
+}
+
+
+::-webkit-input-placeholder {
+    /* WebKit, Blink, Edge */
+    color: #BCC2CA;
+}
+
+:-moz-placeholder {
+    /* Mozilla Firefox 4 to 18 */
+    color: #BCC2CA;
+    opacity: 1;
+}
+
+::-moz-placeholder {
+    /* Mozilla Firefox 19+ */
+    color: #BCC2CA;
+    opacity: 1;
+}
+
+:-ms-input-placeholder {
+    /* Internet Explorer 10-11 */
+    color: #BCC2CA;
+}
+
+::-ms-input-placeholder {
+    /* Microsoft Edge */
+    color: #BCC2CA;
+}
+
+::placeholder {
+    /* Most modern browsers support this now. */
+    color: #BCC2CA;
+}
+
+
+/* Solid Button */
+
+.solid-button {
+    font-family: Lato;
+    font-size: 18px;
+    cursor: pointer;
+    border-radius: 30px;
+    padding: 8px 45px;
+    transition: 0.2s all ease;
+}
+
+.solid-button:active,
+.solid-button:focus {
+    outline: none;
+}
+
+
+/* Green Solid */
+
+.solid-green {
+    color: #FFFFFF;
+    // background: #49CE4F;
+    // border: 1px solid #49CE4F;
+}
+
+.solid-green:hover {
+    background: #26772a;
+}
+
+.solid-green:disabled {
+  cursor: no-drop;
+  color: #FFFFFF;
+  background: #49ce4fe3;
+  border: 1px solid #49ce4fe3;
+}
+
+#log-in-btn {
+  width: 100%;
+//   margin: 40px auto;
+}
+
+
+.login-creds-wrapper .loginButton{
+  width: 60%;
+  margin: 30px auto;
+}
+
+/*-------------------------------------------------RESPONSIVENESS-------------------------------------------------*/
+
+
+/* Large devices (desktops, less than 1200px) */
+
+@media (max-width: 1199.98px) {
+    .login-wrapper {
+        margin-top: 9.938em;
+    }
+}
+
+
+/* Medium devices (tablets, less than 992px) */
+
+@media (max-width: 991.98px) {
+    .login-wrapper {
+        margin-top: 5.938em;
+    }
+}
+
+
+/* Small devices (landscape phones, less than 768px) */
+
+@media (max-width: 767.98px) {
+    .login-wrapper {
+        margin-top: 0.938em;
+    }
+    .login-creds-wrapper {
+        display: flex;
+        flex-direction: column;
+        padding: 0px 0px;
+    }
+}
+
+
+/* Extra small devices (portrait phones, less than 576px) */
+
+@media (max-width: 575.98px) {}
+// LOGIN END

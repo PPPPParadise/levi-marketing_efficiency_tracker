@@ -1,0 +1,341 @@
+@import "./../../../assets/css/css_variables.scss";
+
+.nav-wrapper {
+  display: flex;
+}
+
+.Logo {
+  width: 15%;
+  height: 5px;
+  // padding-bottom: 5px;
+  // padding-top: 5px;
+}
+// .nav-wrapper .Logo {
+//     width: 10%;
+//     height: 10px;
+//     padding-top: 5px;
+//     padding-top: 5px;
+// }
+
+.main-modules {
+  display: flex;
+
+
+  .nav-tab {
+    outline: none;
+    background: #fff;
+    // background: #000;
+    // padding: 23px 15px 34px 15px;
+    padding: 18px 15px 5px 15px;
+    margin: 0px 5px 0px 0px;
+    border: solid #ffffff;
+    border-width: 1px 1px 0px 1px;
+    border-radius: 3px 3px 0px 0px;
+    cursor: pointer;
+    transition: all 0.4s ease;
+    text-transform: uppercase;
+    font-weight: bolder;
+
+    a {
+      // text-decoration: none;
+      // color: $dark-grey;
+      color: #212529;
+      font-weight: 600;
+      font-size: 18px;
+    }
+
+    &:hover {
+      // background: rgba(119, 116, 116, 0.658);
+      // border-color: black;
+      background: rgb(255, 255, 255);
+      border-color: white;
+    }
+
+    &:hover a {
+      // color: #fff;
+      // color: #b00633;
+      // color : #0056b3;
+      color :black
+    }
+  
+  }
+
+
+  .nav-tab.active {
+    // background: $blue;
+    // border-color: $blue;
+    background: black;
+    border-color: #000;
+    // background: white;
+    // border-color: #fff;
+  }
+
+  // .nav-tab.inactive {
+  //   // background: $blue;
+  //   // border-color: $blue;
+  //   background: gray;
+  //   border-color: gray;
+  //   // background: white;
+  //   // border-color: #fff;
+  // }
+
+  .nav-tab.active a {
+    color: #fff;
+    // color: #b00633;
+    // color : #0056b3;
+  }
+
+  .nav-tab.active .disabled {
+    background: gray;
+    border-color: gray;
+    color:black;
+    // color: #b00633;
+    // color : #0056b3;
+  }
+}
+
+.genome-analysis-subNavigation {
+  display: flex;
+  align-items: center;
+  justify-items: center;
+
+  .subNav-heading {
+
+    padding: 0px 20px;
+    cursor: pointer;
+    outline: none;
+    -webkit-transform: translateZ(0);
+    -moz-transform: translateZ(0);
+    transform: translateZ(0);
+
+    a {
+      color: $light-grey;
+      font-weight: 500;
+      padding: 5px;
+      font-size: 16px;
+      -webkit-backface-visibility: hidden;
+      -moz-backface-visibility: hidden;
+      backface-visibility: hidden;
+      -webkit-transform-style: preserve-3d;
+      -moz-transform-style: preserve-3d;
+      transform-style: preserve-3d;
+    }
+
+    &:hover a {
+      // color: $dark-blue;
+    }
+  }
+
+  // .subNav-heading.active a {
+  //   color: $dark-blue;
+  //   font-weight: 600;
+  // }
+
+}
+
+.right-nav {
+  margin-left: auto;
+  display: flex;
+  align-self: center;
+}
+
+
+
+.nav-wrapper {
+  margin: 8px 40px 0px 0px;
+  border-bottom: 1px solid $light-grey;
+}
+
+
+.close-btn,
+.download-btn,
+.date {
+  cursor: pointer;
+}
+.download-btn{
+  color: gray;
+}
+.download-btn:hover{
+  color: gray !important;
+  cursor: no-drop;
+}
+.underline {
+  padding-bottom: 1px;
+  border-bottom: 1px solid #000;
+}
+
+.date:hover,
+.download-btn:hover {
+  color: $dark-blue;
+  border-color: $dark-blue;
+}
+
+.close-btn:hover {
+  color: #ff0000;
+  border-color: #ff0000;
+}
+
+.custom-select-wrapper {
+  display: flex;
+  padding-left: 20px;
+  align-self: center;
+
+  select {
+    border: none;
+  }
+}
+
+.green-container {
+  background: #66ffff3d;
+  padding: 5px 10px;
+  width: fit-content;
+  margin: auto;
+  display: flex;
+}
+
+.current_route {
+  border-bottom: 1px solid #000;
+  font-weight: bold;
+}
+
+.see-segment-journey.underline {
+  border-color: $dark-blue;
+}
+
+.right-arrow {
+  display: none;
+}
+
+.journey-divider {
+  padding: 0px 10px;
+}
+
+.journey-links {
+  a {
+    color: #0056b3;
+    cursor: pointer;
+  }
+}
+
+/*------------------------------------------------------ RESPONSIVENESS ------------------------------------------------------*/
+/* Large devices (desktops, less than 1200px) */
+@media (max-width: 1199.98px) {}
+
+/* Medium devices (tablets, less than 992px) */
+@media (max-width: 991.98px) {
+  .main-modules .nav-tab {
+    padding: 5px 8px;
+  }
+
+  .genome-analysis-subNavigation .subNav-heading {
+    padding: unset;
+  }
+
+  .custom-select-wrapper {
+    padding-left: unset;
+  }
+}
+
+/* Small devices (landscape phones, less than 768px) */
+@media (max-width: 767.98px) {
+  .right-arrow {
+    display: inline;
+    margin-left: 5px;
+  }
+
+  .nav-wrapper {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+  }
+
+  .main-modules {
+    display: flex;
+    justify-content: space-evenly;
+    border-bottom: 1px solid $light-grey;
+    margin-bottom: 1em;
+  }
+
+  .genome-analysis-subNavigation {
+    display: flex;
+    align-items: center;
+    justify-items: center;
+    margin-bottom: 1em;
+  }
+
+  .nav-wrapper {
+    margin: 20px;
+    border-bottom: unset;
+  }
+
+  .main-modules .nav-tab a {
+    text-decoration: none;
+    color: #7f7f7f;
+    font-size: 0.9em;
+  }
+
+  .main-modules .nav-tab.active a {
+    font-size: 1em
+  }
+
+  .genome-analysis-subNavigation .subNav-heading.active a {
+    color: #0070c0;
+    font-weight: 600;
+    font-size: 1.3em;
+  }
+
+  .green-container {
+    background: #66ffff3d;
+    padding: 5px 10px;
+    width: fit-content;
+    margin: auto;
+    flex-direction: column;
+
+    .journey-divider {
+      display: none;
+    }
+
+    .journey-info {
+      padding-bottom: 10px;
+    }
+  }
+
+  .custom-select-wrapper {
+    margin-bottom: 20px;
+  }
+
+  .genome-analysis-subNavigation {
+    display: flex;
+    align-items: center;
+    justify-items: center;
+    margin-bottom: 1em;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .main-modules .nav-tab {
+    padding: 5px 30px;
+  }
+}
+
+/* Extra small devices (portrait phones, less than 576px) */
+@media (max-width: 575.98px) {
+  .main-modules .nav-tab {
+    padding: 5px 10px;
+  }
+}
+
+@media (max-width: 320px) {
+  .genome-analysis-subNavigation {
+    display: flex;
+    align-items: center;
+    justify-items: center;
+    margin-bottom: 1em;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .main-modules .nav-tab {
+    padding: 5px 8px;
+  }
+}

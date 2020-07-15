@@ -1,0 +1,273 @@
+$default-font: "assets/fonts/Calibri.ttf";
+$green: rgb(103, 253, 214);
+$blue: rgb(0, 176, 240);
+$light-grey: #a5a5a5;
+.full-screen-container {
+    height: 100vh;
+    position: relative;
+}
+
+
+/* Footer */
+
+.fixed-footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    padding-bottom: 12px;
+}
+
+.footer-wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+}
+
+.unlimited-sale span {
+    color: $light-grey;
+    padding: 10px 0px;
+    border-top: 1px solid $light-grey;
+    border-bottom: 1px solid $light-grey;
+}
+
+.footer-menu {
+    width: 100%;
+    margin: auto;
+    padding-top: 12px;
+}
+
+.footer-menu ul {
+    display: flex;
+    justify-content: center;
+}
+
+.footer-menu ul li {
+    padding: 0px 10px;
+}
+
+.footer-menu ul li a {
+    color: $light-grey;
+}
+
+.footer-menu ul li:hover a {
+    color: $blue;
+}
+
+.unlimited-sale {
+    padding: 10px 0px;
+}
+
+.divider {
+    width: 2px;
+    height: 17px;
+    background: #a5a5a5;
+    align-self: center;
+}
+
+#branding p {
+    color: $light-grey;
+    font-size: 12px;
+    padding-top: 12px;
+}
+
+
+/* Module Buttons */
+
+.trio-wrapper {
+    padding-left: 10px;
+}
+
+.module-wrapper {
+    margin: 10px 0px;
+}
+
+.module-wrapper .module_icon {
+    width: 69px;
+    height: 69px;
+    margin-right: 15px;
+}
+
+.module-wrapper a {
+    text-decoration: none;
+    color: #000;
+}
+
+.modules {
+    border-left: 1px solid $light-grey;
+}
+
+.module-title {
+    // font-size: 14px;
+    font-size: 17px;
+    font-weight: 600;
+    padding: 10px;
+    letter-spacing: 3px;
+}
+
+.cockpit.module-title {
+    background: #99ff99ff;
+}
+
+.genome.module-title {
+    background: #fffc99;
+}
+
+.dashboard.module-title {
+    background: rgb(0, 176, 240);
+}
+
+.control_center.module-title {
+    background: #aeababff;
+}
+
+#welcome {
+    // padding-top: 5vh;
+    padding-top: 9vh;
+    z-index: 0;
+}
+
+#logout{
+    text-align: right;
+}
+
+#welcome-names {
+    z-index: 1;
+    .welcome-message-wrapper {
+        margin: auto;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding-top: 2vh;
+    }
+    .welcome-message-wrapper img {
+        width: 8em;
+    }
+    .welcome-text-wrapper {
+        // background: $green;
+        background: linear-gradient(90deg,#00b0f0,#59d99d);
+        padding: 5px 0px;
+        width: 100%;
+        text-align: center;
+        margin-top: 5px;
+    }
+    .welcome-text {
+        font-size: 18px;
+        text-transform: uppercase;
+        letter-spacing: 3px;
+    }
+}
+
+.welcome-message-wrapper {
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 25vh;
+}
+
+.welcome-message-wrapper img {
+    width: 15em;
+}
+
+.welcome-text-wrapper {
+    background: $green;
+    padding: 5px 0px;
+    width: 100%;
+    text-align: center;
+}
+
+.welcome-text {
+    font-size: 24px;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+}
+
+
+/* ---------------------------------------------------------------------------RESPONSIVE---------------------------------------------------------------------------*/
+
+
+/* Large devices (desktops, less than 1200px) */
+
+@media (max-width: 1199.98px) {}
+
+
+/* Medium devices (tablets, less than 992px) */
+
+@media (max-width: 991.98px) {}
+
+
+/* Small devices (landscape phones, less than 768px) */
+
+@media (max-width: 767.98px) {
+    #welcome {
+        padding-top: 0vh;
+    }
+    .welcome-content {
+        padding: 30px 15px;
+    }
+    .modules {
+        border-left: unset;
+    }
+    .footer-menu ul {
+        display: flex;
+        justify-content: unset;
+        flex-direction: column;
+    }
+    .full-screen-container {
+        height: unset;
+        position: unset;
+    }
+    .fixed-footer {
+        position: unset;
+        bottom: unset;
+        width: 100%;
+        padding-bottom: 12px;
+    }
+    .divider {
+        width: 2px;
+        height: 17px;
+        background: #a5a5a5;
+        align-self: center;
+        display: none;
+    }
+    .fixed-footer {
+        position: unset;
+        bottom: unset;
+        width: 100%;
+        padding-bottom: 12px;
+        margin-top: 5em;
+    }
+    .footer-menu ul li {
+        padding: 10px 0px;
+        text-align: center;
+    }
+    #welcome-name {
+        .welcome-message-wrapper {
+            margin: auto;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding-top: 2vh;
+        }
+        .welcome-message-wrapper img {
+            width: 8em;
+        }
+        .welcome-text-wrapper {
+            background: $green;
+            padding: 5px 0px;
+            width: 100%;
+            text-align: center;
+        }
+        .welcome-text {
+            font-size: 3vw;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+        }
+    }
+}
+
+
+/* Extra small devices (portrait phones, less than 576px) */
+
+@media (max-width: 575.98px) {}

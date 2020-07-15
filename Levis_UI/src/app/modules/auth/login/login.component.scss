@@ -1,0 +1,254 @@
+$default-font: "assets/fonts/Calibri.ttf";
+$green: rgb(103, 253, 214);
+$blue: rgb(0, 176, 240);
+$light-grey: #a5a5a5;
+.login{
+    width: 100%;
+    height: 608px;
+    background: white url(../../../../assets/images/levis_background_image.jpg) no-repeat top fixed;
+    // background-size: 20;
+}
+.login::after {
+    z-index: 0;
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    // background: #2ecc71;
+    // background: rgba(199, 196, 196, 0.479);
+    // background: white;
+    width: 100%;
+    height: 100%;
+  }
+
+.login-wrapper .header img {
+    transform: scale(0.6);
+}
+
+.login-wrapper {
+    margin-top: 6.125em;
+    padding: 0.625em 0 1em 0;
+    border-radius: 5px;
+    background: transparent;
+    /* box-shadow: 0 0 3px rgba(0, 0, 0, 0.3); */
+}
+
+.header {
+    text-align: center;
+    margin-bottom: 1.975em;
+}
+
+.login-creds-wrapper {
+    display: flex;
+    flex-direction: column;
+    padding: 0px 6.250em;
+}
+
+.login-creds-wrapper input {
+    background-color: transparent;
+    padding: 12px 25px 9px 48px;
+    height: auto;
+    border: 1px solid #bebebe;
+    /* border-top: none; */
+    /* border-right: none; */
+    /* border-left: none; */
+    border-radius: 5px;
+    font-size: 17px;
+}
+
+.forgotpass{
+    color: #626767;
+    font-weight: 500;
+    font-size: 17px;
+    cursor: no-drop !important;
+}
+.forgotpass1{
+    color: #626767;
+    font-weight: 500;
+    font-size: 17px;
+}
+.newSolusAccBtn {
+    color: #58a9d7;
+    font-weight: 500;
+}
+.newSolusAccBtn:hover {
+    color: #0056b3;
+    text-decoration: underline !important;
+}
+
+
+.forgotpass:hover{
+    text-decoration: underline !important;
+    color: #3598DC !important;
+    cursor: pointer;
+}
+
+// .login-creds-wrapper input {
+//     margin: 0px auto 2px auto;
+//     width: 80%;
+// }
+
+.login-creds-wrapper .loginDiv {
+    margin: 0px auto 33px auto;
+    width: 80%;
+    position: relative;
+}
+.login-creds-wrapper .loginDiv img {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+}
+
+.login-creds-wrapper input:focus {
+    outline: none;
+    box-shadow: none;
+    border: 1px solid #000000;
+    /* border-top: none; */
+    /* border-right: none; */
+    /* border-left: none; */
+    border-radius: 5px;
+}
+
+//neha
+.error{
+    text-align: center;
+    color: #e74c3c;
+    font-size: 16px;
+    animation: 2s ease-out 0s 2 slide;
+    // margin-top: -29px;
+    position: absolute;
+    text-align: center;
+    width: 100%;
+}
+
+
+::-webkit-input-placeholder {
+    /* WebKit, Blink, Edge */
+    color: #BCC2CA;
+}
+
+:-moz-placeholder {
+    /* Mozilla Firefox 4 to 18 */
+    color: #BCC2CA;
+    opacity: 1;
+}
+
+::-moz-placeholder {
+    /* Mozilla Firefox 19+ */
+    color: #BCC2CA;
+    opacity: 1;
+}
+
+:-ms-input-placeholder {
+    /* Internet Explorer 10-11 */
+    color: #BCC2CA;
+}
+
+::-ms-input-placeholder {
+    /* Microsoft Edge */
+    color: #BCC2CA;
+}
+
+::placeholder {
+    /* Most modern browsers support this now. */
+    color: #BCC2CA;
+}
+
+
+/* Solid Button */
+
+.solid-button {
+    // font-family: Lato;
+    font-size: 18px;
+    cursor: pointer;
+    border-radius: 30px;
+    // padding: 8px 45px;
+    padding: 8px 36px;
+    transition: 0.2s all ease;
+}
+
+.solid-button:active,
+.solid-button:focus {
+    outline: none;
+}
+
+
+/* Green Solid */
+
+.solid-green {
+    // color: rgb#FFFFFF;
+    background:rgb(49, 48, 48);
+    color: #ffffff;
+    // border: 1px solid #49CE4F;
+    // background: linear-gradient(90deg, #00b0f0, #59d99d);
+    border: 0;
+}
+
+.solid-green:hover {
+    background:rgb(49, 48, 48);
+    // background: #FFFFFF
+    // background: red;
+}
+
+.solid-green:disabled {
+  cursor: no-drop;
+  color: #FFFFFF;
+  // background: #49ce4fe3;
+  background: black;
+  //   border: 1px solid #49ce4fe3;
+  border: 0;
+}
+
+#log-in-btn {
+  width: 100%;
+  margin-bottom: 7px;
+//   margin: 40px auto;
+}
+
+
+.login-creds-wrapper .loginButton{
+    //   width: 60%;
+    width: 25%;
+    // margin: 30px auto;
+    margin: 44px auto 5px auto;
+    text-align: center;
+}
+
+/*-------------------------------------------------RESPONSIVENESS-------------------------------------------------*/
+
+
+/* Large devices (desktops, less than 1200px) */
+
+@media (max-width: 1199.98px) {
+    .login-wrapper {
+        margin-top: 9.938em;
+    }
+}
+
+
+/* Medium devices (tablets, less than 992px) */
+
+@media (max-width: 991.98px) {
+    .login-wrapper {
+        margin-top: 5.938em;
+    }
+}
+
+
+/* Small devices (landscape phones, less than 768px) */
+
+@media (max-width: 767.98px) {
+    .login-wrapper {
+        margin-top: 0.938em;
+    }
+    .login-creds-wrapper {
+        display: flex;
+        flex-direction: column;
+        padding: 0px 0px;
+    }
+}
+
+
+/* Extra small devices (portrait phones, less than 576px) */
+
+@media (max-width: 575.98px) {}

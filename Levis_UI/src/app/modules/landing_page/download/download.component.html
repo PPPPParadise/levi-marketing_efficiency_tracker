@@ -1,0 +1,32 @@
+<div style="text-align:center">
+  <h1>
+    DOWNLOAD THE MET DATA
+  </h1>
+  <div class="data_upload">
+    <div class="form-group">
+      <span style='color:red'>*</span>
+      <label for="email">Country:</label>
+      <select class="form-control" id="selected_country_download" [(ngModel)]="selected_country_download" name="selected_country_download">
+          <option *ngFor='let item of CountryList' [value]="item">{{item}}</option>
+      </select>  
+    </div>
+    
+    <div class="form-group">
+        <span style='color:red'>*</span>
+        <label for="email">Template Type:</label>
+        <select class="form-control" id="selected_template_download" [(ngModel)]="selected_template_download" name="selected_template_download">
+            <option *ngFor='let item of FileTypes' [value]="item.id">{{item.name}}</option>
+        </select>  
+    </div>
+
+    <div class="form-group " >
+        <span style='color:red'>*</span>
+        <label for="email">Month:</label>
+        <input  [(ngModel)]="selected_date_download" id ="selected_date_download" autocomplete="off"  name="selected_date_download" bsDatepicker [bsConfig]="{dateInputFormat: 'YYYYMM'}" (onShown)="onOpenCalendar($event)">
+      </div>
+        
+
+  </div>
+  <button id="download_excel" class="check_btn" type="button" (click)="DownloadExcel()">DOWNLOAD</button>
+</div>
+

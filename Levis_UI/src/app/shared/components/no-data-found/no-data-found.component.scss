@@ -1,0 +1,44 @@
+@import "./../../../../assets/css/css_variables.scss";
+
+.no-data-found-wrapper {
+  text-align: center;
+  width: 50%;
+  margin: 5em auto;
+
+  .blue-heading {
+    color: #00b0f0;
+    margin-top: 5px;
+    text-transform: uppercase;
+    font-size: 1.363em;
+    letter-spacing: 1px;
+    font-weight: 600;
+  }
+
+  .message-text {
+    color: #9a9a9a;
+    font-style: italic;
+    margin-top: 20px;
+    font-size: 1.063em;
+    font-weight: 600;
+    letter-spacing: 1px;
+  }
+
+}
+
+/* Large devices (desktops, less than 1200px) */
+@media (max-width: 1199.98px) {}
+
+/* Medium devices (tablets, less than 992px) */
+@media (max-width: 991.98px) {}
+
+/* Small devices (landscape phones, less than 768px) */
+@media (max-width: 767.98px) {
+  .no-data-found-wrapper {
+    text-align: center;
+    width: unset;
+    margin: auto;
+  }
+}
+
+/* Extra small devices (portrait phones, less than 576px) */
+@media (max-width: 575.98px) {}

@@ -1,0 +1,60 @@
+
+<div style="text-align:center" *ngIf="loaderVisiblity == 'hidden'">
+    <h1>
+      Welcome to MET Data Upload
+    </h1>
+    <div class="data_upload">
+      <div class="form-group">
+        <span style='color:red'>*</span>
+        <label for="country">Country:</label>
+        <select class="form-control" id="selected_country" [(ngModel)]="selected_country" name= "selected_country">
+          <option *ngFor='let item of CountryList' [value]="item">{{item}}</option>
+        </select>  
+      </div>
+      
+      <div class="form-group">
+        <span style='color:red'>*</span>
+        <label for="date">Month:</label>
+        <input  [(ngModel)]="selected_date" id="selected_date"  autocomplete="off"  name="date" bsDatepicker [bsConfig]="{dateInputFormat: 'YYYYMM'}" (onShown)="onOpenCalendar($event)">
+      </div>    
+
+      <div class="form-group">
+        <span style='color:red'>*</span>
+        <label for="Currency" required>Currency:</label> 
+        <select class="form-control" id="selected_currency" [(ngModel)]="selected_currency" name="selected_currency">
+          <option>USD</option>
+          <option>Local Currency</option>
+        </select>
+      </div>      
+    </div>
+
+
+    <div class="div-padding"> 
+            <select *ngIf="FileTypes" [value]="selectedOwnerLevel" (change)="onChangeOwnerLevel($event.target.value)" id="ddOwnerLevel3">
+          <option *ngFor='let item of FileTypes' [value]="item.id">{{item.name}}</option>
+        </select>
+        <input id="fileSelect" type="file" #fileInput (click)="fileInput.value=null" value=""
+        accept=".csv, application/vnd.openxmlformats-officedocument.spreadsheetml.sheet, application/vnd.ms-excel"
+        (change)="handleInputChange($event)" />  
+    </div>    
+      <button type="button" (click)="checkExcel($event)" class="check_btn">Check Data</button>
+      <button id="submit_btn" class="check_btn" type="button" disabled = "true" (click)="submitExcel($event)">Submit</button>
+  <div *ngIf='is_display_errors' class="err_msg">
+    <h2>*ERRORS</h2>
+    <ol class="list_err">
+      <li *ngFor='let item of display_errors;'>
+          {{item}}
+      </li>
+    </ol>
+  </div>
+  <div>
+    <h2 *ngIf="excel_status" class="list_err">
+      {{exceluploadsuccess.message}}
+    </h2>
+  </div>
+
+</div>
+
+<div  [@visibilityChanged]="loaderVisiblity">
+  <app-loader [loadingText]=""></app-loader>
+</div>

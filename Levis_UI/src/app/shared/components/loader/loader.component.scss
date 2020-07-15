@@ -1,0 +1,22 @@
+/* Loader */
+.loader-wrapper p {
+  color: #00b0f0;
+  margin-top: 16px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-size: 1.3em;
+  font-weight: bold;
+}
+
+.loader {
+  width: 80px;
+  height: 80px;
+}
+
+.loader-wrapper {
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 25vh;
+}
