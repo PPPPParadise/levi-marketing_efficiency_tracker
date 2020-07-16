@@ -73,16 +73,16 @@ def send_mail(message,receivers,to_Cc, to_To, log_info=None):
     """
     if log_info:
         log_query_res = run_query(log_info.get('query').format(log_info.get('insert_values')),'query')
-    sender = 'levis_met@cartesianconsulting.com'
-    gmail_password = 'Cart@123'
+    sender = 'levis.met@artefact.com'
+    gmail_password = 'Levi@MET2020'
     msg = MIMEMultipart()
     msg['From'] = sender
     msg['To'] = to_To
-    msg['Cc'] = to_Cc + "ICartesian@levi.com;"
+    msg['Cc'] = to_Cc
     msg['Subject'] = 'Marketing Data Uploaded! ACTION NEEDED:APPROVED/REJECT'
     msg.attach(MIMEText(message,'html'))
     try:
-        smtpobj = smtplib.SMTP('smtp.office365.com',587)
+        smtpobj = smtplib.SMTP('smtp.gmail.com',587)
         smtpobj.ehlo()
         smtpobj.starttls()
         smtpobj.ehlo()
